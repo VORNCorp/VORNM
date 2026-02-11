@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORNM - Анонимный мессенджер</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Дополнительные стили для новой концепции */
+        .app-install {
+            background: linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(124,58,237,0.1) 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid var(--primary);
+        }
+        
+        .app-install h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+        
+        .app-install p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-muted);
+        }
+        
+        .btn-install {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(124, 58, 237, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+            }
+        }
+        
+        .install-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .install-feature {
+            text-align: center;
+        }
+        
+        .install-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .instructions {
+            padding: 80px 0;
+            background-color: var(--bg-card);
+        }
+        
+        .instructions-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .instruction-step {
+            background: var(--dark);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .instruction-step h3 {
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+        }
+        
+        .instruction-step p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .install-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-install h3 {
+                font-size: 1.5rem;
+            }
+            
+            .instructions-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo-text">VORNM</div>
+                <div class="nav-links">
+                    <a href="index.html">Главная</a>
+                    <a href="news.html">Новости</a>
+                    <a href="https://vorncorp.github.io/VORNM-Mobile/" target="_blank">Установить приложение</a>
+                    <a href="#features">Возможности</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <img src="logos/logo.png" alt="VORNM Logo" class="hero-logo">
+                <h1 class="hero-title">VORNM</h1>
+                <p class="hero-subtitle">Анонимный мессенджер нового поколения</p>
+                <div class="hero-buttons">
+                    <a href="https://vorncorp.github.io/VORNM-Mobile/" target="_blank" class="btn btn-primary btn-install">📱 Добавить приложение</a>
+                    <a href="https://handsomely-shapely-dotterel.cloudpub.ru:443" target="_blank" class="btn btn-secondary">Войти через браузер</a>
+                </div>
+            </div>
+
+            <!-- Side News -->
+            <aside class="side-news">
+                <h3 class="side-news-title">Свежие новости</h3>
+                <div class="news-list">
+                    <article class="news-item">
+                        <span class="news-date">11.02.2026</span>
+                        <h4 class="news-title">VORNM Mobile PWA</h4>
+                        <p class="news-excerpt">Теперь VORNM можно установить как приложение на телефон!</p>
+                        <a href="news.html" class="news-link">Читать далее →</a>
+                    </article>
+                    <article class="news-item">
+                        <span class="news-date">01.01.2026</span>
+                        <h4 class="news-title">VORNM теперь на Android</h4>
+                        <p class="news-excerpt">Добавьте ярлык на главный экран и пользуйтесь как нативным приложением</p>
+                        <a href="news.html" class="news-link">Читать далее →</a>
+                    </article>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- App Install Section -->
+    <section class="app-install" id="install">
+        <div class="container">
+            <h3>📲 Установите VORNM на телефон</h3>
+            <p>Добавьте ярлык на главный экран и пользуйтесь мессенджером как нативным приложением. Без скачивания APK, без вирусов, просто и безопасно!</p>
+            
+            <a href="https://vorncorp.github.io/VORNM-Mobile/" target="_blank" class="btn btn-primary btn-install">
+                📱 Добавить VORNM на главный экран
+            </a>
+            
+            <div class="install-features">
+                <div class="install-feature">
+                    <div class="install-icon">🚀</div>
+                    <h4>Мгновенная установка</h4>
+                    <p>Не нужно скачивать APK файлы</p>
+                </div>
+                <div class="install-feature">
+                    <div class="install-icon">💾</div>
+                    <h4>Мало места</h4>
+                    <p>Занимает всего несколько мегабайт</p>
+                </div>
+                <div class="install-feature">
+                    <div class="install-icon">🔄</div>
+                    <h4>Автообновление</h4>
+                    <p>Всегда последняя версия</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="instructions" id="instructions">
+        <div class="container">
+            <h2 class="section-title">Как установить на телефон</h2>
+            <div class="instructions-steps">
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <h3>Откройте сайт</h3>
+                    <p>Перейдите на vorncorp.github.io/VORNM-Mobile с вашего телефона</p>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <h3>Нажмите "Поделиться"</h3>
+                    <p>В браузере нажмите на кнопку меню или "Поделиться"</p>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <h3>Выберите "На главный экран"</h3>
+                    <p>Нажмите "Добавить на главный экран" или "Установить приложение"</p>
+                </div>
+                <div class="instruction-step">
+                    <div class="step-number">4</div>
+                    <h3>Готово!</h3>
+                    <p>Ярлык появится на рабочем столе вашего телефона</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="section-title">Свежие новости</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <span class="news-date">01.01.2026</span>
+                    <h3 class="news-title">VORNM Mobile PWA</h3>
+                    <p class="news-excerpt">Мы перешли на новую технологию! Теперь VORNM доступен как PWA - добавляйте ярлык на главный экран и пользуйтесь без установки APK.</p>
+                    <a href="news.html" class="news-link">Читать далее →</a>
+                </article>
+                <article class="news-card">
+                    <span class="news-date">01.01.2026</span>
+                    <h3 class="news-title">Больше никаких APK</h3>
+                    <p class="news-excerpt">Забудьте о поиске APK файлов. Просто добавьте сайт на главный экран и пользуйтесь VORNM как приложением.</p>
+                    <a href="news.html" class="news-link">Читать далее →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Причины для использования VORNM</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Полная анонимность</h3>
+                    <p>Мы не храним ваши личные данные. Никаких номеров телефонов или email для регистрации.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Сквозное шифрование</h3>
+                    <p>Все ваши сообщения защищены end-to-end шифрованием. Только вы и получатель можете их прочитать.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Быстрая работа</h3>
+                    <p>Мгновенная доставка сообщений и минимальное потребление ресурсов устройства.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Кроссплатформенность</h3>
+                    <p>Используйте VORNM на любом устройстве - телефон, планшет, компьютер или через веб-интерфейс.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>Без рекламы</h3>
+                    <p>Никакой рекламы и отслеживания. Мы уважаем вашу приватность.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Богатые возможности</h3>
+                    <p>Групповые чаты, голосовые сообщения, передача файлов и многое другое.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>VORNM</h3>
+                    <p>Анонимный мессенджер</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Продукт</h4>
+                        <a href="#features">Возможности</a>
+                        <a href="https://vorncorp.github.io/VORNM-Mobile/" target="_blank">Установить приложение</a>
+                        <a href="news.html">Новости</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Поддержка</h4>
+                        <a href="#instructions">Как установить</a>
+                        <a href="#features">Безопасность</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VORN Corporation. Все права защищены.</p>
+                <p class="footer-note">VORNM Mobile - прогрессивное веб-приложение. Добавьте на главный экран для лучшего опыта.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Плавный скролл для якорных ссылок
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Обработка кнопки "Войти через браузер"
+            const webLoginBtn = document.querySelector('.btn-secondary');
+            if (webLoginBtn) {
+                webLoginBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open('https://handsomely-shapely-dotterel.cloudpub.ru:443', '_blank');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
